@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminal 3 Agent Auth Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Terminal 3 Agent Auth SDK Demo</p>
+          <h1>Agents need explicit approval before protected actions run.</h1>
+          <p class="lead">
+            This demo keeps private data behind an authorization boundary. The agent can request a proof-only share, but it is blocked until the user approves the exact request.
+          </p>
+        </div>
+        <div class="status-panel">
+          <p class="label">SDK status</p>
+          <pre id="sdkStatus">Loading...</pre>
+          <button id="liveCheck">Run live SDK check</button>
+          <pre id="liveBox">Optional. Add T3N_API_KEY locally to enable this check.</pre>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>1. Agent request</h2>
+          <p>The support agent asks to share a verified status with a partner CRM. Raw private data is not requested.</p>
+          <button id="createRequest">Create agent request</button>
+          <pre id="requestBox">No request yet.</pre>
+        </article>
+
+        <article class="panel">
+          <h2>2. Consent summary</h2>
+          <p>The user sees purpose, allowed data, blocked data, expiry, and destination before approval.</p>
+          <div id="trustBox" class="boundary">Create a request to review the boundary.</div>
+        </article>
+
+        <article class="panel">
+          <h2>3. Authorization boundary</h2>
+          <p>Run the action before approval, then confirm the boundary and run it again.</p>
+          <div class="actions">
+            <button id="tryWithout">Try without approval</button>
+            <button id="approve">Confirm boundary and approve</button>
+            <button id="tryWith">Run approved action</button>
+          </div>
+          <pre id="decisionBox">Waiting for request.</pre>
+        </article>
+
+        <article class="panel">
+          <h2>4. Consent receipt</h2>
+          <p>Successful execution returns a receipt tied to this exact request and policy fingerprint.</p>
+          <pre id="receiptBox">No receipt yet.</pre>
+        </article>
+
+        <article class="panel wide">
+          <h2>5. Audit trail</h2>
+          <p>The audit log shows request, blocked, and executed events in order.</p>
+          <pre id="auditBox">No events yet.</pre>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

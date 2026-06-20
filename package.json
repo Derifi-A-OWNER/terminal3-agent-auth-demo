@@ -1,0 +1,26 @@
+{
+  "name": "terminal3-agent-auth-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Judge-friendly Terminal 3 Agent Auth SDK demo with explicit allow/deny agent action flow.",
+  "scripts": {
+    "demo": "tsx src/server.ts",
+    "smoke": "tsx src/smoke.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "final-check": "npm run smoke && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "@terminal3/t3n-sdk": "3.9.0",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
