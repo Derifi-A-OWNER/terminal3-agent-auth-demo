@@ -31,6 +31,20 @@ The demo shows:
 8. audit trail for request, block, approval, and execution
 ```
 
+## Judging Fit Add-On
+
+Use this as an optional final paragraph in the Details field after the main description.
+
+```text
+Judging fit:
+
+Completeness: the repo includes a runnable app, final-check command, one-click judge walkthrough, manual demo path, trust guardrails, live-mode notes, and a narrated demo video.
+
+SDK integration: the app imports @terminal3/t3n-sdk@3.9.0, exposes SDK status, keeps secrets server-side, supports local review mode, and includes optional live T3N mode through T3N_API_KEY.
+
+Creativity: instead of a generic spending or procurement agent, this demo applies Agent Auth to privacy-safe proof sharing for an AI support workflow, with visible consent, blocked execution before approval, proof-only output, and an audit trail.
+```
+
 ## Why This Is Different
 
 ```text

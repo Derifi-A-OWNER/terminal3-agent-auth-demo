@@ -2,7 +2,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
-import { addAuditEvent, getAuditEvents } from "./audit.js";
+import { addAuditEvent, getAuditEvents, resetAuditEvents } from "./audit.js";
 import { createAgentRequest, createApprovalToken, evaluateAction } from "./policy.js";
 import { getSdkStatus, runLiveAuthCheck } from "./t3nGateway.js";
 import type { AgentActionRequest, ApprovalDecision } from "./types.js";
@@ -35,6 +35,8 @@ function contentType(path: string): string {
       return "text/css; charset=utf-8";
     case ".js":
       return "text/javascript; charset=utf-8";
+    case ".png":
+      return "image/png";
     default:
       return "text/plain; charset=utf-8";
   }
@@ -64,6 +66,15 @@ const server = createServer(async (req, res) => {
 
     if (req.method === "POST" && url.pathname === "/api/live-auth-check") {
       return json(res, 200, await runLiveAuthCheck());
+    }
+
+    if (req.method === "POST" && url.pathname === "/api/demo/reset") {
+      activeRequest = null;
+      resetAuditEvents();
+      return json(res, 200, {
+        reset: true,
+        note: "Demo state cleared. Create a fresh agent request to restart the judge walkthrough."
+      });
     }
 
     if (req.method === "POST" && url.pathname === "/api/action/request") {

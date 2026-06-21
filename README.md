@@ -43,6 +43,14 @@ Open:
 http://127.0.0.1:8787
 ```
 
+For the fastest review path, click:
+
+```text
+Run judge walkthrough
+```
+
+That button resets the demo, creates a fresh agent request, proves that execution is blocked before approval, confirms the boundary, executes the approved proof-only action, and prints a compact PASS summary.
+
 ## Optional Live SDK Check
 
 Create a local `.env` or set the environment variable in your shell:
@@ -60,6 +68,8 @@ npm run demo
 The app will show a masked wallet/DID preview when the key is present. The key remains server-side only.
 
 The local server automatically loads `.env` through `dotenv`, so judges can either export `T3N_API_KEY` in the shell or place it in a local `.env` file. The browser never receives the key.
+
+See `docs/LIVE_T3N_MODE_EVIDENCE.md` for the exact live-mode boundary and masked output behavior.
 
 ## Demo Flow
 
@@ -88,7 +98,22 @@ See:
 - `src/policy.ts`
 - `src/t3nGateway.ts`
 - `docs/DEMO_SCRIPT.md`
+- `docs/LIVE_T3N_MODE_EVIDENCE.md`
 - `docs/TRUST_GUARDRAILS.md`
+
+## Rubric Fit
+
+### Completeness
+
+The repo includes a runnable app, `npm run final-check`, a one-click judge walkthrough, a manual step-by-step path, README instructions, submission notes, trust guardrails, live-mode evidence, and a narrated demo video.
+
+### SDK Integration
+
+The app imports `@terminal3/t3n-sdk@3.9.0`, exposes SDK status in the UI, keeps the live key server-side, supports local review mode without secrets, and includes optional live T3N mode through `T3N_API_KEY`.
+
+### Creativity
+
+Instead of another delegated spending or procurement agent, this demo applies Agent Auth to privacy-safe proof sharing for an AI support workflow. The agent can request a proof, but the user controls what leaves the boundary.
 
 ## Submission Notes
 
@@ -101,4 +126,5 @@ Final submission helpers:
 - `docs/DORAHACKS_FIELD_COPY.md`
 - `docs/VIDEO_RECORDING_RUNBOOK.md`
 - `docs/FINAL_SUBMISSION_CHECKLIST.md`
+- `docs/POST1_90_PLUS_UPGRADE_PLAN.md`
 - `docs/PUBLISH_COMMANDS.md`

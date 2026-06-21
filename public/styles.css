@@ -96,12 +96,47 @@ h2 {
 }
 
 .panel,
+.judge-panel,
 .status-panel {
   border: 1px solid rgba(153, 221, 235, 0.18);
   border-radius: 8px;
   background: rgba(10, 20, 26, 0.78);
   padding: 1.1rem;
   box-shadow: 0 14px 50px rgba(0, 0, 0, 0.22);
+}
+
+.judge-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(280px, 0.7fr);
+  gap: 1rem;
+  align-items: stretch;
+  margin-bottom: 1.25rem;
+  border-color: rgba(117, 215, 239, 0.34);
+}
+
+.judge-panel h2 {
+  margin-bottom: 0.55rem;
+}
+
+.judge-panel p {
+  color: #b9cbd6;
+  margin-bottom: 0;
+}
+
+.judge-actions {
+  display: grid;
+  gap: 0.65rem;
+  align-content: center;
+  min-width: 12rem;
+}
+
+.judge-actions button:first-child {
+  border-color: #9bf0bc;
+  background: #174833;
+}
+
+.judge-actions button:first-child:hover {
+  background: #1f6045;
 }
 
 .grid {
@@ -148,6 +183,7 @@ code {
 
 @media (max-width: 820px) {
   .hero,
+  .judge-panel,
   .grid {
     grid-template-columns: 1fr;
   }
