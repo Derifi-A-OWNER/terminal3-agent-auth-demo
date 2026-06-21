@@ -1,0 +1,61 @@
+# Voiceover Script V5 Timed Normalized
+
+Target video: `D:\snap\Recording 2026-06-22 002644.mp4`
+
+Target length: about 93-96 seconds.
+
+Voice style: slower than V4, consistent loudness, action-first. Each segment is normalized before mixing so the narration does not start quiet and then become loud later.
+
+## Timed Segments
+
+### 00.5s
+
+Terminal 3 Agent Auth: explicit approval before protected AI agent actions run.
+
+### 06.2s
+
+The SDK status confirms the Terminal 3 SDK is loaded in local review mode.
+
+### 12.0s
+
+The request flow starts with no approval and no consent receipt.
+
+### 16.5s
+
+The agent creates a request to share verified status with a partner CRM.
+
+### 22.8s
+
+The user reviews purpose, destination, allowed data, blocked data, expiry, and policy fingerprint.
+
+### 31.4s
+
+Raw private data, keys, wallet secrets, and full identity profile are explicitly blocked.
+
+### 40.0s
+
+Without approval, execution is denied. The boundary blocks this protected action.
+
+### 50.0s
+
+The user approves only after confirming the visible boundary.
+
+### 56.2s
+
+That approval is tied to this request id, capability, expiry, and fingerprint.
+
+### 63.4s
+
+After approval, the action runs. Allowed is true, but raw data released remains false.
+
+### 72.2s
+
+The consent receipt records the approved capability and user confirmation.
+
+### 80.0s
+
+The audit trail preserves the sequence: request, block, approval, and execution.
+
+### 89.0s
+
+Reviewable, consent-bound, and limited to user-approved data.
